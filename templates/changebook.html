@@ -1,0 +1,100 @@
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>系统主页-图书修改</title>
+    <link rel="stylesheet" type="text/css" href="../static/css/common.css" />
+    <link rel="stylesheet" type="text/css" href="../static/css/main.css" />
+</head>
+
+<body>
+
+    <div class="topbar-wrap white">
+        <div class="topbar-inner clearfix">
+            <div class="top-info-wrap">
+                <ul class="top-info-list clearfix">
+                    <li><a>图书管理系统</a></li>
+                    <li><a href="backlogin">登录</a></li>
+                    <li><a href="backregister">注册</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="container clearfix">
+        <div class="sidebar-wrap">
+            <div class="sidebar-title">
+                <h1>菜单</h1>
+            </div>
+            <div class="sidebar-content">
+                <ul class="sidebar-list">
+                    <li>
+                        <ul class="sub-menu">
+                            <li><a href="addbook">图书添加</a></li>
+                            <li><a href="deletebook">图书删除</a></li>
+                            <li><a href="changebook">图书修改</a></li>
+                            <li><a href="querybook">图书查询</a></li>
+                            <li><a href="borrowrecord">借阅记录</a></li>
+                            <li><a href="readerinfor">读者信息</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!--/sidebar-->
+        <div class="main-wrap">
+            <div class="result-wrap">
+                <form name="myform" id="myform" method="post">
+                    <div class="result-content">
+                        <table class="result-tab" width="100%">
+                            <tr id="col-title">
+                                <th>ID</th>
+                                <th>书名</th>
+                                <th>作者</th>
+                                <th>出版时间</th>
+                                <th>位置</th>
+                                <th>描述</th>
+                                <th>操作</th>
+                            </tr>
+                            {% for book in books %}
+                            <tr>
+                                <td>{{ book.number }}</td>
+                                <td>{{ book.name }}</td>
+                                <td>{{ book.author }}</td>
+                                <td>{{ book.publicationdate }}</td>
+                                <td>{{ book.location }}</td>
+                                <td>{{ book.remark }}</td>
+                                <td align="center">
+                                    <a style="color: orange"
+                                        onclick="change_book('{{ book.number }}','{{ book.name }}',this)">修改</a>
+                                </td>
+                            </tr>
+                            {% endfor %}
+                        </table>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <!--/main-->
+    </div>
+
+</body>
+
+</html>
+
+
+<!--修改的js脚本-->
+<script>
+    function change_book(bookid, bookname, obj) {
+        var r = confirm("确认修改书名为：" + bookname + "  的书籍吗？");
+        if (r === true) {
+
+            window.location.href = "changebookinfor/" + bookid;
+            { # { { url_for('deletebook2', booid = 'b015') } } # }
+
+        } else {
+            { # 取消删除操作 # }
+            alert("取消修改成功")
+        }
+    }
+</script>

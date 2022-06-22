@@ -1,0 +1,103 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>系统主页-图书管理</title>
+    <link rel="stylesheet" type="text/css" href="../static/css/common.css"/>
+    <link rel="stylesheet" type="text/css" href="../static/css/main.css"/>
+    <link rel="stylesheet" type="text/css" href="assets/css/pagination.css">
+</head>
+<body>
+<div class="topbar-wrap white">
+    <div class="topbar-inner clearfix">
+        <div class="top-info-wrap">
+            <ul class="top-info-list clearfix">
+                <li><a>图书管理系统</a></li>
+                <li><a href="backlogin">登录</a></li>
+                <li><a href="backregister">注册</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<div class="container clearfix">
+    <div class="sidebar-wrap">
+        <div class="sidebar-title">
+            <h1>菜单</h1>
+        </div>
+        <div class="sidebar-content">
+            <ul class="sidebar-list">
+                <li>
+                    <ul class="sub-menu">
+                       <li><a href="addbook">图书添加</a></li>
+                        <li><a href="deletebook">图书删除</a></li>
+                        <li><a href="changebook">图书修改</a></li>
+                        <li><a href="querybook">图书查询</a></li>
+                        <li><a href="borrowrecord">借阅记录</a></li>
+                        <li><a href="readerinfor">读者信息</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <!--/sidebar-->
+    <div class="main-wrap">
+
+        <!--add  form-->
+        <div class="result-wrap">
+            <div class="result-content">
+                <form  id="add-book"  action="/addbook" method="POST">
+                    <input type="hidden" value="add" name="type">
+
+                    <table class="insert-tab" width="100%">
+                        <tbody>
+                            <tr>
+                                <th width="120">
+                                    <i class="require-red">*</i>id：</th>
+                                <td>
+                                    <input value="{{ number }}" class="common-text required" id="title" name="number" size="50" value="" type="text">
+                                </td>
+                            </tr>
+                             <tr>
+                                <th>
+                                    <i class="require-red">*</i>书名：</th>
+                                <td>
+                                    <input  value="{{ name }}" class="common-text required" id="title" name="bookname" size="50" value="" type="text">
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>作者：</th>
+                                <td>
+                                    <input value="{{ author }}" class="common-text" name="author" size="50"  type="text">
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>出版日期：</th>
+                                <td>
+                                    <input value="{{ publicationdate }}" type="date" name="pdate" id="pdate" min="1900-01-01" class="common-text">
+                                </td>
+                            </tr>
+                            <tr>
+                               <th>
+                                    <i class="require-red">*</i>位置：</th>
+                                <td>
+                                    <input value="{{ location }}" class="common-text" name="address" size="50" type="text">
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>描述：</th>
+                                <td>
+                                    <input  value="{{ remark }}" class="common-text" name="description" size="50"  type="text">
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                     <h5  style="color:red ">{{ get_flashed_messages()[0] }} </h5>
+                     <INPUT  TYPE=submit VALUE="添加">
+                </form>
+            </div>
+        </div>
+        <!--/add form-->
+    </div>
+</div>
+</body>
+</html>

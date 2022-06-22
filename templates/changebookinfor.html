@@ -1,0 +1,88 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>系统主页-图书管理</title>
+    <link rel="stylesheet" type="text/css" href="../static/css/common.css"/>
+    <link rel="stylesheet" type="text/css" href="../static/css/main.css"/>
+</head>
+<body>
+<div class="topbar-wrap white">
+    <div class="topbar-inner clearfix">
+        <div class="top-info-wrap">
+            <ul class="top-info-list clearfix">
+                <li><a>图书管理系统</a></li>
+                <li><a href="backlogin">登录</a></li>
+                <li><a href="backregister">注册</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+  <h3 style="margin: 10px;">修改图书信息</h3>
+    <!--/sidebar-->
+    <div class="main-wrap">
+
+        <!--add  form-->
+        <div class="result-wrap">
+            <div class="result-content">
+            {% for i in detail %}
+                <form  id="add-book"  action="/changebookinfor/{{ i[0] }}" method="POST">
+                    <input type="hidden" value="add" name="type">
+
+
+                    <table class="insert-tab" width="100%">
+                        <tbody>
+                            <tr>
+                                <th width="120">
+                                    <i class="require-red">*</i>id：</th>
+                                <td>
+                                    <input value="{{ i[0] }}" class="common-text required" id="title" name="number" size="50"  type="text">
+                                </td>
+                            </tr>
+                             <tr>
+                                <th>
+                                    <i class="require-red">*</i>书名：</th>
+                                <td>
+                                    <input  value="{{ i[1] }}" class="common-text required" id="title" name="bookname" size="50"  type="text">
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>作者：</th>
+                                <td>
+                                    <input value="{{ i[2] }}" class="common-text" name="author" size="50"  type="text">
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>出版日期：</th>
+                                <td>
+                                    <input value="{{ i[3] }}" type="date" name="pdate" id="pdate" min="1900-01-01" class="common-text">
+                                </td>
+                            </tr>
+                            <tr>
+                                <th><i class="require-red">*</i>位置：</th>
+                                <td>
+                                    <input value="{{ i[4] }}" class="common-text" name="address" size="50" type="text">
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>描述：</th>
+                                <td>
+                                    <input  value="{{ i[5] }}" class="common-text" name="description" size="50"  type="text">
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+ {% endfor %}
+
+                     <h5  style="color:red ">{{ get_flashed_messages()[0] }} </h5>
+                     <INPUT  TYPE=submit VALUE="修改">
+                    <a href="http://127.0.0.1:5000/changebook" >返回修改书籍界面</a>
+                </form>
+            </div>
+        </div>
+        <!--/add form-->
+    </div>
+</body>
+</html>
+
