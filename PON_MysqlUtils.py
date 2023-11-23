@@ -29,10 +29,9 @@ class PON_MysqlUtils():
         # 涉及写操作要注意提交
         self.conn.commit()
 
-    # #修改书籍    #先删除 后添加  来实现修改功能
+    # #按IP地址修改设备信息，传入修改的属性和修改的值
     def update_PON_device(self,data,attribute,IP_Address):
         sqlstr = "UPDATE pon_script SET "+attribute+" = "+data+" where IP_Address = '" + IP_Address + "';"
-        print(sqlstr)
         self.cur.execute(sqlstr)
         self.conn.commit()
 
