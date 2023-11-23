@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>PON批量维护小工具</title>
+	<style>
+		body {
+			font-family: Arial, sans-serif;
+		}
+		h1 {
+			font-size: 24px;
+			font-weight: bold;
+			margin-bottom: 20px;
+		}
+		form {
+			margin-bottom: 30px;
+		}
+		label {
+			display: inline-block;
+			width: 100px;
+			text-align: right;
+			margin-right: 10px;
+		}
+		label1 {
+			display: inline-block;
+			width: 250px;
+			text-align: right;
+			margin-right: 10px;
+		}
+		input[type="text"] {
+			padding: 5px;
+			border: 1px solid #ccc;
+			border-radius: 3px;
+			margin-bottom: 10px;
+		}
+		input[type="submit"] {
+			padding: 5px 10px;
+			background-color: #4CAF50;
+			color: white;
+			border: none;
+			border-radius: 3px;
+			cursor: pointer;
+		}
+		input[type="submit"]:hover {
+			background-color: #3E8E41;
+		}
+		input[type="file"]:hover {
+			background-color: #3E8E41;
+		}
+		h2 {
+			font-size: 20px;
+			font-weight: bold;
+			margin-bottom: 10px;
+		}
+		table {
+			border-collapse: collapse;
+			width: 100%;
+		}
+		th, td {
+			padding: 8px;
+			text-align: left;
+			border-bottom: 1px solid #ddd;
+		}
+		th {
+			background-color: #4CAF50;
+			color: white;
+		}
+		tr:hover {
+			background-color: #f2f2f2;
+		}
+	</style>
+</head>
+<body>
+
+<h1>PON批量维护小工具</h1>
+
+<form>
+	<label for="searchInput">设备IP：</label>
+	<input type="text" id="searchInput">
+
+	<input type="submit" value="搜索">
+
+	<label for="searchInput">操作内容</label>
+	<input type="text" id="searchInput">
+
+	<input type="submit" value="搜索">
+
+	<!-- <label1 for="searchInput">导入excel文件，目前只支持xls文件</label1> -->
+	<input type="file" id="files" value="导入excel文件">
+
+</form>
+
+<h2>搜索结果：</h2>
+
+<table>
+	<thead>
+		<tr>
+			<th>IP地址</th>
+			<th>登录情况</th>
+			<th>命令执行情况</th>
+			<th>详细日志</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td>项目1</td>
+			<td>软件</td>
+			<td>这是一个很棒的软件。</td>
+			<td><a href="#">下载链接</a></td>
+		</tr>
+		<tr>
+			<td>项目2</td>
+			<td>游戏</td>
+			<td>这是一个很刺激的游戏。</td>
+			<td><a href="#">下载链接</a></td>
+		</tr>
+		<tr>
+			<td>项目3</td>
+			<td>应用</td>
+			<td>这是一个很实用的应用。</td>
+			<td><a href="#">下载链接</a></td>
+		</tr>
+	</tbody>
+</table>
+
+</body>
+</html>
