@@ -1,7 +1,7 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>系统主页-图书管理</title>
+    <title>系统主页</title>
     <link rel="stylesheet" type="text/css" href="../static/css/common.css"/>
     <link rel="stylesheet" type="text/css" href="../static/css/main.css"/>
     <link rel="stylesheet" type="text/css" href="assets/css/pagination.css">
@@ -11,7 +11,7 @@
     <div class="topbar-inner clearfix">
         <div class="top-info-wrap">
             <ul class="top-info-list clearfix">
-                <li><a>图书管理系统</a></li>
+                <li><a>网操互联网脚本系统</a></li>
                 <li><a href="backlogin">登录</a></li>
                 <li><a href="backregister">注册</a></li>
             </ul>
@@ -20,7 +20,7 @@
 </div>
 
 <div class="container clearfix">
-    <div class="sidebar-wrap">
+        <div class="sidebar-wrap">
         <div class="sidebar-title">
             <h1>菜单</h1>
         </div>
@@ -28,12 +28,12 @@
             <ul class="sidebar-list">
                 <li>
                     <ul class="sub-menu">
-                       <li><a href="addbook">图书添加</a></li>
-                        <li><a href="deletebook">图书删除</a></li>
-                        <li><a href="changebook">图书修改</a></li>
-                        <li><a href="querybook">图书查询</a></li>
-                         <li><a href="borrowrecord">借阅记录</a></li>
-                        <li><a href="readerinfor">读者信息</a></li>
+                       <li><a href="addbook">PON脚本</a></li>
+                        <li><a href="deletebook">PON脚本</a></li>
+                        <li><a href="changebook">PON脚本</a></li>
+                        <li><a href="querybook">PON脚本</a></li>
+                        <li><a href="borrowrecord">PON脚本</a></li>
+                        <li><a href="readerinfor">PON脚本</a></li>
                     </ul>
                 </li>
             </ul>
@@ -49,12 +49,21 @@
                 <form method="POST" action="/querybook" id="searchForm">
                     <input type="hidden" name="type" value="search">
                     <table class="search-tab">
-                        <tr>  
-                            <th width="70">书名:</th>
-                            <td><input  name="bookname"  id="bookname" value="{{ name }}"></td>
+                        <tr>
+                            <th width="70">设备IP:</th>
+                            <td><input  name="IP"  id="IP" value="{{ IP }}"></td>
+                              <th width="70">操作:</th>
+                            <td><input  name="operate"  id="operate" value="{{ operate }}"></td>
+                            <td>
+                                <select name = "操作">
+                                     <option value="关闭光猫">关闭光猫</option>
+                                     <option value="关闭光猫">关闭光猫</option>
+                                     <option value="关闭光猫">关闭光猫</option>
+                                </select>
+                            <td>
                         </tr>
                     </table>
-                     <INPUT  style="margin-left: 80px " TYPE=submit VALUE="查询书籍">
+                     <INPUT  style="margin-left: 80px " TYPE=submit VALUE="查询IP">
                 </form>
             </div>
         </div>
@@ -65,21 +74,17 @@
                 <div class="result-content">
                     <table class="result-tab" width="100%">
                         <tr id="col-title">
-                            <th>ID</th>
-                            <th>书名</th>
-                            <th>作者</th>
-                            <th>出版时间</th>
-                            <th>位置</th>
-                            <th>描述</th>
+                            <th>设备IP:</th>
+                            <th>登录情况</th>
+                            <th>命令执行结果</th>
+                            <th>详细日志</th>
                         </tr>
-                         {% for book in books %}
+                         {% for data in datas %}
                           <tr>
-                            <td>{{ book.number }}</td>
-                            <td>{{ book.name }}</td>
-                            <td>{{ book.author }}</td>
-                            <td>{{ book.publicationdate }}</td>
-                            <td>{{ book.location }}</td>
-                            <td>{{ book.remark }}</td>
+                            <td>{{ data.IP_Address }}</td>
+                            <td>{{ data.Login_Status }}</td>
+                            <td>{{ data.Results }}</td>
+                            <td>{{ data.Log }}</td>
                           </tr>
                           {% endfor %}
                     </table>

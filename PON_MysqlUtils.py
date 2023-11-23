@@ -1,7 +1,7 @@
 # 导入mysql数据库
 import pymysql
 
-class MysqlUtils():
+class PON_MysqlUtils():
     #初始化
     def __init__(self,host,user,password,db,charset):
 
@@ -35,15 +35,15 @@ class MysqlUtils():
     #      add_book(self,number,name,author,publicationdate,location,remark)
 
 
-    # 查找所有书籍
-    def query_all_book(self):
-        self.cur.execute('SELECT number ,name,author,publicationdate,location ,remark FROM BOOK order by number')
+    # 查找所有IP信息
+    def query_all_PON_Script(self):
+        self.cur.execute('SELECT IP_Address ,Login_Status,Results,Log FROM pon_script order by IP_Address')
         result = self.cur.fetchall()
         return result
 
     #查找指定书籍(参数：书名) 根据书籍名称查询书籍
-    def query_one_book(self,name):
-        sqlstr="SELECT number ,name,author,publicationdate,location ,remark FROM BOOK WHERE name = '"+name+"'"
+    def query_one_PON_Script(self,IP_Adress):
+        sqlstr="SELECT IP_Address ,Login_Status,Results,Log FROM pon_script WHERE IP_Address = '"+IP_Adress+"'"
         self.cur.execute(sqlstr)
         result = self.cur.fetchall()
         return result
@@ -87,3 +87,7 @@ class MysqlUtils():
             return password
 
 
+if __name__ == '__main__':
+    util = PON_MysqlUtils('localhost', 'root', 'QAZplm86327169', 'wczx_hlw', 'utf8')
+    data = util.query_one_PON_Script('127.0.0.1')
+    print(data)

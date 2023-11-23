@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 #encoding: utf-8
 '''
-@File    :   app.py
+@File    :   test_app.py
 @Time    :   2022/06/09 10:58:49
 @Author  :   bzw
 @Version :   1.0
@@ -17,6 +17,7 @@ from flask import Flask, render_template, flash, request, abort, redirect, url_f
 # from models import User
 #导入数据库操作工具类
 from mysqlUtils import MysqlUtils
+from PON_MysqlUtils import PON_MysqlUtils
 #导入json包
 import json
 #导入日志
@@ -28,14 +29,16 @@ from logging.handlers import SMTPHandler
 from booksystem_models.readerModel import readerModel
 from booksystem_models.recordModel import recordModel
 from booksystem_models.bookModel import bookModel
+from booksystem_models.PON_Script_Model import PON_Script_Model
 
 util = MysqlUtils('localhost', 'root', 'QAZplm86327169', 'library', 'utf8')
+util2 = PON_MysqlUtils('localhost', 'root', 'QAZplm86327169', 'wczx_hlw', 'utf8')
 #所有书籍信息
 # u=util.query_all_book()
 
 app = Flask(__name__)
 app.secret_key = '123'  #flash加密
-
+app.config['SERVER_NAME'] = 'localhost:5001'
 
 @app.route('/')
 def hello_world():
@@ -73,9 +76,12 @@ def register():
             app.logger.info('注册成功'+username+';'+password)
             return render_template("register.html")
     else:
-        app.logger.warning('注册失败'+username+';'+password)
         return render_template("register.html")
-
+'''
+    else:
+        app.logger.warning('注册失败' + username + ';' + password)
+        return render_template("register.html")
+'''
 
 #返回登录
 @app.route('/backlogin', methods=['POST', 'GET'])
@@ -94,8 +100,10 @@ def backregister():
 def login():
     if request.method == "POST":
         form = request.form
-        username = form.get('username') + ""
-        password = form.get('password') + ""
+        username = form.get('username')
+        password = form.get('password')
+        print(username)
+        print(password)
         if not username:
             flash("请输入用户名")
             return render_template("login.html", password=password)
@@ -103,6 +111,7 @@ def login():
             flash("请输入密码")
             return render_template("login.html", username=username)
         password2 = util.query_Password(username)  # 根据账号查询的密码
+        print(password2)
         if (password == password2):
             app.logger.info('登录成功'+username+';'+password)
             return render_template("addbook.html")
@@ -149,10 +158,9 @@ def addbook():
         m = bookModel()
         m.add_book(number, name, author, publicationdate, location, remark)
         flash("添加图书成功")
-        app.logger.info('添加图书成功:'+bookid)
+        app.logger.info('添加图书成功:'+number)
         return render_template("addbook.html")
     else:
-        app.logger.warning('添加图书失败:'+bookid)
         return render_template("addbook.html")
 
 
@@ -227,19 +235,16 @@ def changebookinfor(bookid):
 # 查询界面
 @app.route('/querybook', methods=['POST', 'GET'])
 def querybook():
-    # u = util.query_all_book()
-    # MVC模式重构
-    m = bookModel()
-    books = m.get_all_book_data()
+    p = PON_Script_Model()
+    PON_data = p.get_all_PON_Script_data()
+    print(PON_data[0].IP_Address)
     if request.method == "POST":
-        name = request.values.get('bookname')
-        # onebook=util.query_one_book(name)
-        # MVC模式重构
-        onebook = m.get_one_book_data(name)
-        app.logger.info('查询操作:'+name)
-        return render_template("querybook.html", books=onebook, name=name)
+        IP = request.values.get('IP')
+        operate = request.values.get('operate')
+        PON_data = p.get_one_PON_Script_data(IP)
+        return render_template("querybook.html", datas=PON_data)
     else:
-        return render_template("querybook.html", books=books)
+        return render_template("querybook.html", datas=PON_data)
 
 
 #图书借阅信息界面
