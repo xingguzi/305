@@ -72,6 +72,7 @@ if __name__ == '__main__':
     username = '用户名'
     password = '密码'
     port = '00'
+    a = 123
     command = '要输入的命令行指令'
     telnet_client = TelnetClient()
     # 如果登录结果返加True，则执行命令，然后退出
