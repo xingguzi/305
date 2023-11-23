@@ -13,26 +13,28 @@ class PON_MysqlUtils():
         self.conn = pymysql.connect(host=host, user=user, password=password, db=db, charset=charset)
         self.cur = self.conn.cursor()
 
-    # #增加书籍
-    def add_book(self,number,name,author,publicationdate,location ,remark):
-        sqlstr="insert into book (number,name,author,publicationdate,location ,remark) " \
-               "values( '"+number+"','"+name+"','"+author+"','"+publicationdate+"','"+location+"','"+remark+"');"
+    # #增加设备信息
+    def add_PON_device (self,IP_Address,Login_Status,Results,Log ):
+        sqlstr="insert into pon_script (IP_Address,Login_Status,Results,Log ) " \
+               "values( '"+IP_Address+"','"+Login_Status+"','"+Results+"','"+Log+"');"
         self.cur.execute(sqlstr)
         # 涉及写操作要注意提交
         self.conn.commit()
 
-    #删除书籍  根据书籍id删除
-    def delete_book(self, bookid):
-        sqlstr="delete from book where number = '" + bookid + "';"
+    #删除PON设备，根据设备IP删除
+    def delete_PON_device(self, IP_Address):
+        sqlstr="delete from pon_script where IP_Address = '" + IP_Address + "';"
         #拼接并执行sql语句
         self.cur.execute(sqlstr)
         # 涉及写操作要注意提交
         self.conn.commit()
 
     # #修改书籍    #先删除 后添加  来实现修改功能
-    #  def change_book(self,number,name,author,publicationdate,location ,remark):
-    #      delete_book(self,bookid)
-    #      add_book(self,number,name,author,publicationdate,location,remark)
+    def update_PON_device(self,data,attribute,IP_Address):
+        sqlstr = "UPDATE pon_script SET "+attribute+" = "+data+" where IP_Address = '" + IP_Address + "';"
+        print(sqlstr)
+        self.cur.execute(sqlstr)
+        self.conn.commit()
 
 
     # 查找所有IP信息
@@ -41,7 +43,7 @@ class PON_MysqlUtils():
         result = self.cur.fetchall()
         return result
 
-    #查找指定书籍(参数：书名) 根据书籍名称查询书籍
+    #查找指定设备信息(参数：IP) 根据IP查找设备
     def query_one_PON_Script(self,IP_Adress):
         sqlstr="SELECT IP_Address ,Login_Status,Results,Log FROM pon_script WHERE IP_Address = '"+IP_Adress+"'"
         self.cur.execute(sqlstr)
@@ -89,5 +91,8 @@ class PON_MysqlUtils():
 
 if __name__ == '__main__':
     util = PON_MysqlUtils('localhost', 'root', 'QAZplm86327169', 'wczx_hlw', 'utf8')
-    data = util.query_one_PON_Script('127.0.0.1')
+    # data = util.query_all_PON_Script()
+    # print(data)
+    util.update_PON_device('0','Results','127.0.0.1')
+    data = util.query_all_PON_Script()
     print(data)
