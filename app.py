@@ -38,7 +38,7 @@ util2 = PON_MysqlUtils('localhost', 'root', 'QAZplm86327169', 'wczx_hlw', 'utf8'
 
 app = Flask(__name__)
 app.secret_key = '123'  #flash加密
-app.config['SERVER_NAME'] = 'localhost:5001'
+# app.config['SERVER_NAME'] = '192.168.1.1:5000'
 
 @app.route('/')
 def hello_world():
@@ -305,4 +305,4 @@ if __name__ == '__main__':
         "[%(asctime)s][%(module)s:%(lineno)d][%(levelname)s][%(thread)d] - %(message)s"
     ))
     app.logger.addHandler(mail_handler)
-    app.run(debug=True)
+    app.run(host = "127.0.0.1", port = 5000,debug=None,load_dotenv=True)

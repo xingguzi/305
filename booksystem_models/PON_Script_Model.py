@@ -19,7 +19,7 @@ class PON_Script_Model(object):
     def __init__(self):
         self.util = PON_MysqlUtils('localhost', 'root', 'QAZplm86327169', 'wczx_hlw', 'utf8')
 
-    #查询所有书籍
+    #查询所有设备
     def get_all_PON_Script_data(self):
         self.u = self.util.query_all_PON_Script()
         PON_Script_list = []
@@ -27,7 +27,7 @@ class PON_Script_Model(object):
             PON_Script_list.append(PON_Script(i[0], i[1], i[2], i[3]))
         return PON_Script_list
 
-    #查询一本书
+    #按IP地址查询设备
     def get_one_PON_Script_data(self,IP_Adress):
         self.u = self.util.query_one_PON_Script(IP_Adress)
         one_PON_Script_list = []
@@ -35,12 +35,16 @@ class PON_Script_Model(object):
             one_PON_Script_list.append(PON_Script(i[0], i[1], i[2], i[3]))
         return one_PON_Script_list
 
-    #根据id删除一本书
-    def delete_one_book_by_id(self,bookid):
-        self.util.delete_book(bookid)
+    #根据IP地址删除一个设备
+    def delete_one_PON_device(self,IP_Address):
+        self.util.delete_PON_device(IP_Address)
 
     #添加书籍
-    def add_book(self,number,name,author,publicationdate,location,remark):
-        self.util.add_book(number,name,author,publicationdate,location,remark)
+    def add_PON_device(self,IP_Address,Login_Status,Results,Log):
+        self.util.add_PON_device(IP_Address,Login_Status,Results,Log)
+
+    #修改设备信息
+    def update_PON_device(self,data,attribute,IP_Address):
+        self.util.update_PON_device(data,attribute,IP_Address)
 
 
