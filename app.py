@@ -240,12 +240,15 @@ def querybook():
     PON_data = p.get_all_PON_Script_data()
     if request.method == "POST":
         IP = request.values.get('IP')
+        print(IP)
         #operter 为选择了的操作项
         operter = request.form.get('os')
+        print(operter)
         #模糊查询模式
         PON_data = p.get_vague_PON_Script_data(IP)
         file = request.files.get('file')
-        if file is None:
+        f = file.read()
+        if f == b'':
             print('文件上传失败')
         else:
             f = file.read()

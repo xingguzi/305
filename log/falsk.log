@@ -141,3 +141,345 @@ Traceback (most recent call last):
   File "D:\python\lib\ntpath.py", line 293, in expanduser
     path = os.fspath(path)
 TypeError: expected str, bytes or os.PathLike object, not FileStorage
+[2023-11-24 17:28:08,816][app.py:1440][ERROR][7136] - Exception on /querybook [POST]
+Traceback (most recent call last):
+  File "D:\python\lib\site-packages\flask\app.py", line 2051, in wsgi_app
+    response = self.full_dispatch_request()
+  File "D:\python\lib\site-packages\flask\app.py", line 1501, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "D:\python\lib\site-packages\flask\app.py", line 1499, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "D:\python\lib\site-packages\flask\app.py", line 1485, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "D:/pychrm/untitled/305/booksystem/app.py", line 252, in querybook
+    clinic_file = xlrd.open_workbook(file_contents=f)
+  File "D:\python\lib\site-packages\xlrd\__init__.py", line 166, in open_workbook
+    file_format = inspect_format(filename, file_contents)
+  File "D:\python\lib\site-packages\xlrd\__init__.py", line 59, in inspect_format
+    path = os.path.expanduser(path)
+  File "D:\python\lib\ntpath.py", line 293, in expanduser
+    path = os.fspath(path)
+TypeError: expected str, bytes or os.PathLike object, not NoneType
+[2023-11-24 17:28:11,040][app.py:1440][ERROR][12928] - Exception on /querybook [POST]
+Traceback (most recent call last):
+  File "D:\python\lib\site-packages\flask\app.py", line 2051, in wsgi_app
+    response = self.full_dispatch_request()
+  File "D:\python\lib\site-packages\flask\app.py", line 1501, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "D:\python\lib\site-packages\flask\app.py", line 1499, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "D:\python\lib\site-packages\flask\app.py", line 1485, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "D:/pychrm/untitled/305/booksystem/app.py", line 252, in querybook
+    clinic_file = xlrd.open_workbook(file_contents=f)
+  File "D:\python\lib\site-packages\xlrd\__init__.py", line 166, in open_workbook
+    file_format = inspect_format(filename, file_contents)
+  File "D:\python\lib\site-packages\xlrd\__init__.py", line 59, in inspect_format
+    path = os.path.expanduser(path)
+  File "D:\python\lib\ntpath.py", line 293, in expanduser
+    path = os.fspath(path)
+TypeError: expected str, bytes or os.PathLike object, not NoneType
+[2023-11-24 17:28:19,568][app.py:1440][ERROR][15896] - Exception on /querybook [POST]
+Traceback (most recent call last):
+  File "D:\python\lib\site-packages\flask\app.py", line 2051, in wsgi_app
+    response = self.full_dispatch_request()
+  File "D:\python\lib\site-packages\flask\app.py", line 1501, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "D:\python\lib\site-packages\flask\app.py", line 1499, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "D:\python\lib\site-packages\flask\app.py", line 1485, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "D:/pychrm/untitled/305/booksystem/app.py", line 252, in querybook
+    clinic_file = xlrd.open_workbook(file_contents=f)
+  File "D:\python\lib\site-packages\xlrd\__init__.py", line 166, in open_workbook
+    file_format = inspect_format(filename, file_contents)
+  File "D:\python\lib\site-packages\xlrd\__init__.py", line 59, in inspect_format
+    path = os.path.expanduser(path)
+  File "D:\python\lib\ntpath.py", line 293, in expanduser
+    path = os.fspath(path)
+TypeError: expected str, bytes or os.PathLike object, not NoneType
+[2023-11-24 17:29:17,726][app.py:1440][ERROR][15848] - Exception on /querybook [POST]
+Traceback (most recent call last):
+  File "D:\python\lib\site-packages\flask\app.py", line 2051, in wsgi_app
+    response = self.full_dispatch_request()
+  File "D:\python\lib\site-packages\flask\app.py", line 1501, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "D:\python\lib\site-packages\flask\app.py", line 1499, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "D:\python\lib\site-packages\flask\app.py", line 1485, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "D:/pychrm/untitled/305/booksystem/app.py", line 252, in querybook
+    clinic_file = xlrd.open_workbook(file_contents=f)
+  File "D:\python\lib\site-packages\xlrd\__init__.py", line 166, in open_workbook
+    file_format = inspect_format(filename, file_contents)
+  File "D:\python\lib\site-packages\xlrd\__init__.py", line 59, in inspect_format
+    path = os.path.expanduser(path)
+  File "D:\python\lib\ntpath.py", line 293, in expanduser
+    path = os.fspath(path)
+TypeError: expected str, bytes or os.PathLike object, not NoneType
+[2023-11-24 17:29:21,702][app.py:1440][ERROR][20568] - Exception on /querybook [POST]
+Traceback (most recent call last):
+  File "D:\python\lib\site-packages\flask\app.py", line 2051, in wsgi_app
+    response = self.full_dispatch_request()
+  File "D:\python\lib\site-packages\flask\app.py", line 1501, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "D:\python\lib\site-packages\flask\app.py", line 1499, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "D:\python\lib\site-packages\flask\app.py", line 1485, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "D:/pychrm/untitled/305/booksystem/app.py", line 252, in querybook
+    clinic_file = xlrd.open_workbook(file_contents=f)
+  File "D:\python\lib\site-packages\xlrd\__init__.py", line 166, in open_workbook
+    file_format = inspect_format(filename, file_contents)
+  File "D:\python\lib\site-packages\xlrd\__init__.py", line 59, in inspect_format
+    path = os.path.expanduser(path)
+  File "D:\python\lib\ntpath.py", line 293, in expanduser
+    path = os.fspath(path)
+TypeError: expected str, bytes or os.PathLike object, not NoneType
+[2023-11-24 17:29:43,401][app.py:1440][ERROR][6792] - Exception on /querybook [POST]
+Traceback (most recent call last):
+  File "D:\python\lib\site-packages\flask\app.py", line 2051, in wsgi_app
+    response = self.full_dispatch_request()
+  File "D:\python\lib\site-packages\flask\app.py", line 1501, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "D:\python\lib\site-packages\flask\app.py", line 1499, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "D:\python\lib\site-packages\flask\app.py", line 1485, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "D:/pychrm/untitled/305/booksystem/app.py", line 252, in querybook
+    clinic_file = xlrd.open_workbook(file_contents=f)
+  File "D:\python\lib\site-packages\xlrd\__init__.py", line 166, in open_workbook
+    file_format = inspect_format(filename, file_contents)
+  File "D:\python\lib\site-packages\xlrd\__init__.py", line 59, in inspect_format
+    path = os.path.expanduser(path)
+  File "D:\python\lib\ntpath.py", line 293, in expanduser
+    path = os.fspath(path)
+TypeError: expected str, bytes or os.PathLike object, not NoneType
+[2023-11-24 17:30:37,911][app.py:1440][ERROR][17712] - Exception on /querybook [POST]
+Traceback (most recent call last):
+  File "D:\python\lib\site-packages\flask\app.py", line 2051, in wsgi_app
+    response = self.full_dispatch_request()
+  File "D:\python\lib\site-packages\flask\app.py", line 1501, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "D:\python\lib\site-packages\flask\app.py", line 1499, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "D:\python\lib\site-packages\flask\app.py", line 1485, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "D:/pychrm/untitled/305/booksystem/app.py", line 252, in querybook
+    clinic_file = xlrd.open_workbook(file_contents=f)
+  File "D:\python\lib\site-packages\xlrd\__init__.py", line 166, in open_workbook
+    file_format = inspect_format(filename, file_contents)
+  File "D:\python\lib\site-packages\xlrd\__init__.py", line 59, in inspect_format
+    path = os.path.expanduser(path)
+  File "D:\python\lib\ntpath.py", line 293, in expanduser
+    path = os.fspath(path)
+TypeError: expected str, bytes or os.PathLike object, not NoneType
+[2023-11-24 19:36:33,803][app.py:1440][ERROR][30200] - Exception on /querybook [POST]
+Traceback (most recent call last):
+  File "D:\python\lib\site-packages\flask\app.py", line 2051, in wsgi_app
+    response = self.full_dispatch_request()
+  File "D:\python\lib\site-packages\flask\app.py", line 1501, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "D:\python\lib\site-packages\flask\app.py", line 1499, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "D:\python\lib\site-packages\flask\app.py", line 1485, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "D:/pychrm/untitled/305/booksystem/app.py", line 252, in querybook
+    clinic_file = xlrd.open_workbook(file_contents=f)
+  File "D:\python\lib\site-packages\xlrd\__init__.py", line 166, in open_workbook
+    file_format = inspect_format(filename, file_contents)
+  File "D:\python\lib\site-packages\xlrd\__init__.py", line 59, in inspect_format
+    path = os.path.expanduser(path)
+  File "D:\python\lib\ntpath.py", line 293, in expanduser
+    path = os.fspath(path)
+TypeError: expected str, bytes or os.PathLike object, not NoneType
+[2023-11-24 19:38:56,788][app.py:1440][ERROR][1436] - Exception on /querybook [POST]
+Traceback (most recent call last):
+  File "D:\python\lib\site-packages\flask\app.py", line 2051, in wsgi_app
+    response = self.full_dispatch_request()
+  File "D:\python\lib\site-packages\flask\app.py", line 1501, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "D:\python\lib\site-packages\flask\app.py", line 1499, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "D:\python\lib\site-packages\flask\app.py", line 1485, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "D:/pychrm/untitled/305/booksystem/app.py", line 254, in querybook
+    clinic_file = xlrd.open_workbook(file_contents=f)
+  File "D:\python\lib\site-packages\xlrd\__init__.py", line 166, in open_workbook
+    file_format = inspect_format(filename, file_contents)
+  File "D:\python\lib\site-packages\xlrd\__init__.py", line 59, in inspect_format
+    path = os.path.expanduser(path)
+  File "D:\python\lib\ntpath.py", line 293, in expanduser
+    path = os.fspath(path)
+TypeError: expected str, bytes or os.PathLike object, not NoneType
+[2023-11-24 19:39:13,244][app.py:1440][ERROR][22460] - Exception on /querybook [POST]
+Traceback (most recent call last):
+  File "D:\python\lib\site-packages\flask\app.py", line 2051, in wsgi_app
+    response = self.full_dispatch_request()
+  File "D:\python\lib\site-packages\flask\app.py", line 1501, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "D:\python\lib\site-packages\flask\app.py", line 1499, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "D:\python\lib\site-packages\flask\app.py", line 1485, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "D:/pychrm/untitled/305/booksystem/app.py", line 254, in querybook
+    clinic_file = xlrd.open_workbook(file_contents=f)
+  File "D:\python\lib\site-packages\xlrd\__init__.py", line 166, in open_workbook
+    file_format = inspect_format(filename, file_contents)
+  File "D:\python\lib\site-packages\xlrd\__init__.py", line 59, in inspect_format
+    path = os.path.expanduser(path)
+  File "D:\python\lib\ntpath.py", line 293, in expanduser
+    path = os.fspath(path)
+TypeError: expected str, bytes or os.PathLike object, not NoneType
+[2023-11-24 19:40:05,679][app.py:1440][ERROR][28936] - Exception on /querybook [POST]
+Traceback (most recent call last):
+  File "D:\python\lib\site-packages\flask\app.py", line 2051, in wsgi_app
+    response = self.full_dispatch_request()
+  File "D:\python\lib\site-packages\flask\app.py", line 1501, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "D:\python\lib\site-packages\flask\app.py", line 1499, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "D:\python\lib\site-packages\flask\app.py", line 1485, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "D:/pychrm/untitled/305/booksystem/app.py", line 254, in querybook
+    clinic_file = xlrd.open_workbook(file_contents=f)
+  File "D:\python\lib\site-packages\xlrd\__init__.py", line 166, in open_workbook
+    file_format = inspect_format(filename, file_contents)
+  File "D:\python\lib\site-packages\xlrd\__init__.py", line 59, in inspect_format
+    path = os.path.expanduser(path)
+  File "D:\python\lib\ntpath.py", line 293, in expanduser
+    path = os.fspath(path)
+TypeError: expected str, bytes or os.PathLike object, not NoneType
+[2023-11-24 19:40:59,385][app.py:1440][ERROR][27044] - Exception on /querybook [POST]
+Traceback (most recent call last):
+  File "D:\python\lib\site-packages\flask\app.py", line 2051, in wsgi_app
+    response = self.full_dispatch_request()
+  File "D:\python\lib\site-packages\flask\app.py", line 1501, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "D:\python\lib\site-packages\flask\app.py", line 1499, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "D:\python\lib\site-packages\flask\app.py", line 1485, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "D:/pychrm/untitled/305/booksystem/app.py", line 255, in querybook
+    clinic_file = xlrd.open_workbook(file_contents=f)
+  File "D:\python\lib\site-packages\xlrd\__init__.py", line 166, in open_workbook
+    file_format = inspect_format(filename, file_contents)
+  File "D:\python\lib\site-packages\xlrd\__init__.py", line 59, in inspect_format
+    path = os.path.expanduser(path)
+  File "D:\python\lib\ntpath.py", line 293, in expanduser
+    path = os.fspath(path)
+TypeError: expected str, bytes or os.PathLike object, not NoneType
+[2023-11-24 19:41:52,488][app.py:1440][ERROR][20552] - Exception on /querybook [POST]
+Traceback (most recent call last):
+  File "D:\python\lib\site-packages\flask\app.py", line 2051, in wsgi_app
+    response = self.full_dispatch_request()
+  File "D:\python\lib\site-packages\flask\app.py", line 1501, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "D:\python\lib\site-packages\flask\app.py", line 1499, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "D:\python\lib\site-packages\flask\app.py", line 1485, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "D:/pychrm/untitled/305/booksystem/app.py", line 255, in querybook
+    clinic_file = xlrd.open_workbook(file_contents=f)
+  File "D:\python\lib\site-packages\xlrd\__init__.py", line 166, in open_workbook
+    file_format = inspect_format(filename, file_contents)
+  File "D:\python\lib\site-packages\xlrd\__init__.py", line 59, in inspect_format
+    path = os.path.expanduser(path)
+  File "D:\python\lib\ntpath.py", line 293, in expanduser
+    path = os.fspath(path)
+TypeError: expected str, bytes or os.PathLike object, not NoneType
+[2023-11-24 19:42:01,770][app.py:1440][ERROR][2188] - Exception on /querybook [POST]
+Traceback (most recent call last):
+  File "D:\python\lib\site-packages\flask\app.py", line 2051, in wsgi_app
+    response = self.full_dispatch_request()
+  File "D:\python\lib\site-packages\flask\app.py", line 1501, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "D:\python\lib\site-packages\flask\app.py", line 1499, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "D:\python\lib\site-packages\flask\app.py", line 1485, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "D:/pychrm/untitled/305/booksystem/app.py", line 255, in querybook
+    clinic_file = xlrd.open_workbook(file_contents=f)
+  File "D:\python\lib\site-packages\xlrd\__init__.py", line 166, in open_workbook
+    file_format = inspect_format(filename, file_contents)
+  File "D:\python\lib\site-packages\xlrd\__init__.py", line 59, in inspect_format
+    path = os.path.expanduser(path)
+  File "D:\python\lib\ntpath.py", line 293, in expanduser
+    path = os.fspath(path)
+TypeError: expected str, bytes or os.PathLike object, not NoneType
+[2023-11-24 19:43:09,072][app.py:1440][ERROR][3140] - Exception on /querybook [POST]
+Traceback (most recent call last):
+  File "D:\python\lib\site-packages\flask\app.py", line 2051, in wsgi_app
+    response = self.full_dispatch_request()
+  File "D:\python\lib\site-packages\flask\app.py", line 1501, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "D:\python\lib\site-packages\flask\app.py", line 1499, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "D:\python\lib\site-packages\flask\app.py", line 1485, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "D:/pychrm/untitled/305/booksystem/app.py", line 256, in querybook
+    clinic_file = xlrd.open_workbook(file_contents=f)
+  File "D:\python\lib\site-packages\xlrd\__init__.py", line 166, in open_workbook
+    file_format = inspect_format(filename, file_contents)
+  File "D:\python\lib\site-packages\xlrd\__init__.py", line 59, in inspect_format
+    path = os.path.expanduser(path)
+  File "D:\python\lib\ntpath.py", line 293, in expanduser
+    path = os.fspath(path)
+TypeError: expected str, bytes or os.PathLike object, not NoneType
+[2023-11-24 19:43:54,478][app.py:1440][ERROR][11828] - Exception on /querybook [POST]
+Traceback (most recent call last):
+  File "D:\python\lib\site-packages\flask\app.py", line 2051, in wsgi_app
+    response = self.full_dispatch_request()
+  File "D:\python\lib\site-packages\flask\app.py", line 1501, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "D:\python\lib\site-packages\flask\app.py", line 1499, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "D:\python\lib\site-packages\flask\app.py", line 1485, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "D:/pychrm/untitled/305/booksystem/app.py", line 256, in querybook
+    clinic_file = xlrd.open_workbook(file_contents=f)
+  File "D:\python\lib\site-packages\xlrd\__init__.py", line 166, in open_workbook
+    file_format = inspect_format(filename, file_contents)
+  File "D:\python\lib\site-packages\xlrd\__init__.py", line 59, in inspect_format
+    path = os.path.expanduser(path)
+  File "D:\python\lib\ntpath.py", line 293, in expanduser
+    path = os.fspath(path)
+TypeError: expected str, bytes or os.PathLike object, not NoneType
+[2023-11-24 19:44:37,334][app.py:1440][ERROR][14948] - Exception on /querybook [POST]
+Traceback (most recent call last):
+  File "D:\python\lib\site-packages\flask\app.py", line 2051, in wsgi_app
+    response = self.full_dispatch_request()
+  File "D:\python\lib\site-packages\flask\app.py", line 1501, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "D:\python\lib\site-packages\flask\app.py", line 1499, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "D:\python\lib\site-packages\flask\app.py", line 1485, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "D:/pychrm/untitled/305/booksystem/app.py", line 256, in querybook
+    clinic_file = xlrd.open_workbook(file_contents=f)
+  File "D:\python\lib\site-packages\xlrd\__init__.py", line 166, in open_workbook
+    file_format = inspect_format(filename, file_contents)
+  File "D:\python\lib\site-packages\xlrd\__init__.py", line 59, in inspect_format
+    path = os.path.expanduser(path)
+  File "D:\python\lib\ntpath.py", line 293, in expanduser
+    path = os.fspath(path)
+TypeError: expected str, bytes or os.PathLike object, not NoneType
+[2023-11-24 19:45:02,890][app.py:1440][ERROR][20196] - Exception on /querybook [POST]
+Traceback (most recent call last):
+  File "D:\python\lib\site-packages\flask\app.py", line 2051, in wsgi_app
+    response = self.full_dispatch_request()
+  File "D:\python\lib\site-packages\flask\app.py", line 1501, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "D:\python\lib\site-packages\flask\app.py", line 1499, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "D:\python\lib\site-packages\flask\app.py", line 1485, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "D:/pychrm/untitled/305/booksystem/app.py", line 256, in querybook
+    clinic_file = xlrd.open_workbook(file_contents=f)
+  File "D:\python\lib\site-packages\xlrd\__init__.py", line 166, in open_workbook
+    file_format = inspect_format(filename, file_contents)
+  File "D:\python\lib\site-packages\xlrd\__init__.py", line 59, in inspect_format
+    path = os.path.expanduser(path)
+  File "D:\python\lib\ntpath.py", line 293, in expanduser
+    path = os.fspath(path)
+TypeError: expected str, bytes or os.PathLike object, not NoneType
