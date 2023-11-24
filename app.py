@@ -30,6 +30,8 @@ from booksystem_models.readerModel import readerModel
 from booksystem_models.recordModel import recordModel
 from booksystem_models.bookModel import bookModel
 from booksystem_models.PON_Script_Model import PON_Script_Model
+from telnet_test.excel分析.excel分析02 import convert2json
+import xlrd
 
 util = MysqlUtils('localhost', 'root', 'QAZplm86327169', 'library', 'utf8')
 util2 = PON_MysqlUtils('localhost', 'root', 'QAZplm86327169', 'wczx_hlw', 'utf8')
@@ -102,8 +104,6 @@ def login():
         form = request.form
         username = form.get('username')
         password = form.get('password')
-        print(username)
-        print(password)
         if not username:
             flash("请输入用户名")
             return render_template("login.html", password=password)
@@ -111,7 +111,6 @@ def login():
             flash("请输入密码")
             return render_template("login.html", username=username)
         password2 = util.query_Password(username)  # 根据账号查询的密码
-        print(password2)
         if (password == password2):
             app.logger.info('登录成功'+username+';'+password)
             return render_template("addbook.html")
@@ -235,16 +234,35 @@ def changebookinfor(bookid):
 # 查询界面
 @app.route('/querybook', methods=['POST', 'GET'])
 def querybook():
+    #operters 为设备可选操作项
+    operters = ['关闭光猫','2','3']
     p = PON_Script_Model()
     PON_data = p.get_all_PON_Script_data()
-    print(PON_data[0].IP_Address)
     if request.method == "POST":
         IP = request.values.get('IP')
-        operate = request.values.get('operate')
-        PON_data = p.get_one_PON_Script_data(IP)
-        return render_template("querybook.html", datas=PON_data)
+        #operter 为选择了的操作项
+        operter = request.form.get('os')
+        #模糊查询模式
+        PON_data = p.get_vague_PON_Script_data(IP)
+        file = request.files.get('file')
+        if file is None:
+            print('文件上传失败')
+        else:
+            f = file.read()
+            clinic_file = xlrd.open_workbook(file_contents=f)
+            # sheet1
+            table = clinic_file.sheet_by_index(0)
+            nrows = table.nrows
+            for i in range(1, nrows):
+                row_date = table.row_values(i)
+                print(row_date)
+            print('文件上传成功')
+        #精准查询模式-------------------------------------------------------------------------------
+        #PON_data = p.get_one_PON_Script_data(IP)
+        #============================================================================================
+        return render_template("querybook.html", datas=PON_data,operters = operters)
     else:
-        return render_template("querybook.html", datas=PON_data)
+        return render_template("querybook.html", datas=PON_data,operters = operters)
 
 
 #图书借阅信息界面

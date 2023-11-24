@@ -35,6 +35,15 @@ class PON_Script_Model(object):
             one_PON_Script_list.append(PON_Script(i[0], i[1], i[2], i[3]))
         return one_PON_Script_list
 
+        # 按IP地址查询设备
+
+    def get_vague_PON_Script_data(self, IP_Adress):
+        self.u = self.util.query_vague_PON_Script(IP_Adress)
+        vague_PON_Script_list = []
+        for i in self.u:
+            vague_PON_Script_list.append(PON_Script(i[0], i[1], i[2], i[3]))
+        return vague_PON_Script_list
+
     #根据IP地址删除一个设备
     def delete_one_PON_device(self,IP_Address):
         self.util.delete_PON_device(IP_Address)

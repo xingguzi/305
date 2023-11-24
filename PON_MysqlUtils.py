@@ -48,6 +48,13 @@ class PON_MysqlUtils():
         self.cur.execute(sqlstr)
         result = self.cur.fetchall()
         return result
+        # 查找指定设备信息(参数：IP) 根据IP查找设备
+
+    def query_vague_PON_Script(self, IP_Adress_data):
+        sqlstr = "SELECT * FROM pon_script WHERE IP_Address LIKE '" + '%'+IP_Adress_data + "%'"
+        self.cur.execute(sqlstr)
+        result = self.cur.fetchall()
+        return result
 
     # 查找指定书籍(参数：书籍id) 根据书籍名称查询书籍
     def query_one_book_byid(self, id):
@@ -92,6 +99,5 @@ if __name__ == '__main__':
     util = PON_MysqlUtils('localhost', 'root', 'QAZplm86327169', 'wczx_hlw', 'utf8')
     # data = util.query_all_PON_Script()
     # print(data)
-    util.update_PON_device('0','Results','127.0.0.1')
-    data = util.query_all_PON_Script()
+    data = util.query_vague_PON_Script("127")
     print(data)
